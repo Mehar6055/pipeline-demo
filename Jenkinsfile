@@ -8,7 +8,11 @@ pipeline {
         }
         stage('Build') {
             steps {
+<<<<<<< HEAD
                 sh '''mvn package'''
+=======
+                sh 'echo "This step will build the mvn"'
+>>>>>>> 195ddbf484b1f68dfe76fa5e88ba56deedb86e77
             }
         }
     }
