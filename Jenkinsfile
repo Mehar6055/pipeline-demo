@@ -8,7 +8,7 @@ pipeline{
                }
           stage(‘Build’){
           steps{
-           sh ' ' ' echo “This step will build the mvn” ' ' '
+           sh' ' ' echo “This step will build the mvn” ' ' '
           }
         }
       }
