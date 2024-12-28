@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven 3'  // This must match the name configured in Jenkins' Global Tool Configuration
+    }
     stages {
         stage('SCM') {
             steps {
@@ -8,12 +11,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '''mvn package'''  // The command that actually builds the Maven project
+                sh 'mvn package'  // This will now work because Maven is installed and configured
             }
         }
-        stage('Archive-Artifacts'){        
-            steps{
-                archiveArtifacts 'target/demo_*'
+        stage('Archive-Artifacts') {
+            steps {
+                archiveArtifacts 'demo_*'
             }
         }
     }
