@@ -8,12 +8,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-<<<<<<< HEAD
-                sh '''mvn package'''
-=======
-                sh 'echo "This step will build the mvn"'
->>>>>>> 195ddbf484b1f68dfe76fa5e88ba56deedb86e77
+                sh '''mvn package'''  // The command that actually builds the Maven project
+            }
+        }
+        stage('Archive-Artifacts'){        
+            steps{
+                archiveArtifacts 'demo_*'
             }
         }
     }
 }
+
