@@ -43,7 +43,7 @@ pipeline {
         stage('Upload-Artifacts') {
             steps {
                 nexusArtifactUploader artifacts: [[artifactId: 'jenkins', classifier: '', file: "./target/demo_artifact-1.0-SNAPSHOT.jar", type: 'jar']], 
-                credentialsId: 'nexus_cred', groupId: 'jenkins', nexusUrl: '13.61.10.180:8081', 
+                credentialsId: 'nexus_cred', groupId: 'jenkins', nexusUrl: '13.61.10.180:8081/repository/demorepo/', 
                 nexusVersion: 'NEXUS3', protocol: 'http', repository: 'demorepo', version: '1.1'
             }
         }
