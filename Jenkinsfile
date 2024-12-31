@@ -43,7 +43,7 @@ pipeline {
         stage('Upload-Artifacts') {
             steps {
                 nexusArtifactUploader artifacts: [[artifactId: 'dev', classifier: '', file: "./target/demo_artifact-1.1.jar", type: 'jar']], 
-                credentialsId: 'nexus', groupId: 'dev_group', nexusUrl: '13.61.10.180:8081/nexus', 
+                credentialsId: 'nexus', groupId: 'dev_group', nexusUrl: '13.61.10.180:8081', 
                 nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '1.1'
             }
         }
