@@ -33,9 +33,12 @@ pipeline {
             steps {
                 sleep(60)
                 script {
-                    def qg = waitForQualityGate()
-                    if (qg.status != 'OK') {
-                        error "Quality Gate failed: ${qg.status}"
+                    qg=waitForQualityGate('sonarQuality')
+                    if (qg.status == 'OK'){
+                        echo "Quality Gate passed"
+                    }
+                    else {
+                        error 'The pipeline failed due to my quality gate check"
                     }
                 }
             }
