@@ -38,7 +38,7 @@ pipeline {
                         echo "Quality Gate passed"
                     }
                     else {
-                        error 'The pipeline failed due to my quality gate check"
+                        error "The pipeline failed due to my quality gate check"
                     }
                 }
             }
